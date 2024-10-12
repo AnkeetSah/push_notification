@@ -17,12 +17,12 @@ push.setVapidDetails(
 // Your push subscription details
 const sub = {
   endpoint:
-    "https://fcm.googleapis.com/fcm/send/cJkGIwHK6QY:APA91bE-2WWTyqJ0pprB5kZ4Mm_qd7qtuAa1f9FS9BAH3mdQmcgovVUW2JWxE5oR-8Ssro2E0n1P_UEKjOcuXSDHp90mDxnfz8GNYIXAN9iHRd2OaZJVJtzG_QZGNeCWIYs7fpLWlp4y",
+    "https://wns2-sg2p.notify.windows.com/w/?token=BQYAAABP86hjL%2bkm7nMdLaWZIY2yTYv6q%2fW3GtyG9Fsb4UtAmsiSs5QnUkkevHgIGxEnyUjLujFOkRpvJSID0q2C49xUUFvvnfQsOza8pACs8LkLIUV7j99gGdnEurt9S3I0GE5%2f68Rk3a5yULxw6%2bJDofOf0GbF56AG4thH%2bekrcnr%2bxLr8%2btrSv212s%2fwwNqmgb6aif78mfVKKmKW79mHYyD5GCDdhRTxurapT4JCgC9cuytxyYuQCO0SoOS%2fKCL3epiQg5a3cl6%2b6Oq%2fvoLEDWspeAgPq46voAfWa5VksrxUzWI4UzLZoqHhv71XfNx%2b8B49a7KgG1a%2fQiFFMAj%2ftr2sj",
   expirationTime: null,
   keys: {
     p256dh:
-      "BINE5DUqN_mFJlAt3uMb1LcGhH-usrPZWWWwXIMp3nSPw1KAFa1GRuamzFJ1Rl-vTEYxkXHrApP66oe6DaY5N5s",
-    auth: "gHdcVCtzleN0tvAS2hSlKA",
+      "BHVAXZiM6bfd728CJLQsDmOvCxIuu5DPgBfYFeHA93mFxDdJaQES33y8GxSRiHzR5u-ikpTIITWKr58YuNj1UeY",
+    auth: "-EvDfPidXYl0_lVuKgI3qQ",
   },
 };
 
