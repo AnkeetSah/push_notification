@@ -14,22 +14,23 @@ push.setVapidDetails(
 
 let sub = {
   endpoint:
-    "https://fcm.googleapis.com/fcm/send/cEArpB47a8I:APA91bG9F5XT3_kGp62Z66ugrm8HFQHSRXovcnX6RtrlKPYLFDbj_qvnAOviDryPejxB3U8kVVNrpIFGDLzqfXipMa2jBNGEiK6LRTQFlcuBUjUCzKcwZau7PtcyOKS-g1nfOPtEyP6L",
+    "https://fcm.googleapis.com/fcm/send/fWhbNBkMu7o:APA91bEHW8q0dKF5OJgQOjz3hQ5IgqLLAKrvluUNlwi9G_Rxnrq3jcNwa5mre3BkjgcsY2VbBisU_ODfHu67SttdjScLHCndzjUaUOFjS-vk4lI59KXXWroJ27vSoI8qxl5cAT5OjrjU",
   expirationTime: null,
   keys: {
     p256dh:
-      "BBMzBPpuCbKfct9j8eBk5MQTh5sF9WZDVQ0c3vzsi1DLP1eRmdj3rKPP0tRqqToO8iL9WTSoGiz2zUF9enjqlzU",
-    auth: "dqMaMlRvN0BfCXf47W4Njw",
+      "BDHamRfl-ksGU2CydYJe2qlEpsXoM_vzsUuAJJQ4wkQEs_Dg169TAdHZXjPzcBAXG8PBcPwx3u0KDpub8qGSaFE",
+    auth: "ADRSpiPlmDWN2VKqGcPwcQ",
   },
 };
 
 // Prepare a JSON payload
 const payload = JSON.stringify({ message: "test message" });
 
-push.sendNotification(sub, payload)
-  .then(response => {
-    console.log('Push notification sent successfully', response);
+push
+  .sendNotification(sub, payload)
+  .then((response) => {
+    console.log("Push notification sent successfully", response);
   })
-  .catch(error => {
-    console.error('Error sending push notification', error);
+  .catch((error) => {
+    console.error("Error sending push notification", error);
   });
