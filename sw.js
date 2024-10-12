@@ -1,22 +1,36 @@
 self.addEventListener('push', (event) => {
+    console.log('Push event received:', event);
+
     let data = {};
-    
-    // Check if there is data and parse it
     if (event.data) {
-        data = event.data.json(); // Parse the incoming JSON data
+        try {
+            data = event.data.json();
+            console.log('Push data:', data);
+        } catch (error) {
+            console.error('Error parsing push data:', error);
+        }
     } else {
-        data.message = 'This is a notification body.'; // Default message
+        data.message = 'This is a default notification body.';
     }
 
-    // Define notification options
     const options = {
-        body: data.message, // Use the message from the parsed JSON
-        icon: 'https://img.icons8.com/ios/452/notification.png', // Sample notification icon
-        badge: 'https://img.icons8.com/ios/452/badge.png' // Sample badge icon
+        body: data.message,
+        icon: 'https://img.icons8.com/ios/452/notification.png',
+        badge: 'https://img.icons8.com/ios/452/badge.png'
     };
 
-    // Show the notification
     event.waitUntil(
-        self.registration.showNotification('Hello world!', options)
+        self.registration.showNotification('Push Notification', options)
+    );
+});
+
+self.addEventListener('activate', (event) => {
+    console.log('Service Worker activated');
+    event.waitUntil(
+        self.registration.showNotification('Test Notification', {
+            body: 'This is a test notification triggered manually.',
+            icon: 'https://img.icons8.com/ios/452/notification.png',
+            badge: 'https://img.icons8.com/ios/452/badge.png'
+        })
     );
 });
