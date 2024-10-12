@@ -14,12 +14,12 @@ push.setVapidDetails(
 
 let sub = {
   endpoint:
-    "https://fcm.googleapis.com/fcm/send/fWhbNBkMu7o:APA91bEHW8q0dKF5OJgQOjz3hQ5IgqLLAKrvluUNlwi9G_Rxnrq3jcNwa5mre3BkjgcsY2VbBisU_ODfHu67SttdjScLHCndzjUaUOFjS-vk4lI59KXXWroJ27vSoI8qxl5cAT5OjrjU",
+    "https://fcm.googleapis.com/fcm/send/f5Gd93rYn1U:APA91bGYbTHE2g_YKA4_TotG9yqbvEV1p49JfJllmvwjlmUT8nINa1DfFcsZg77rFdnS8fhCgj6i-VdD_nE3Pz2TS0LAfTLqIPK1nlQ496yywpfpk_uglX0nSsiCZzot2xv91YFYuwfJ",
   expirationTime: null,
   keys: {
     p256dh:
-      "BDHamRfl-ksGU2CydYJe2qlEpsXoM_vzsUuAJJQ4wkQEs_Dg169TAdHZXjPzcBAXG8PBcPwx3u0KDpub8qGSaFE",
-    auth: "ADRSpiPlmDWN2VKqGcPwcQ",
+      "BB7mtPYgDKiAxyBfbG1web3RXwz-y61LaoQ7rCIlZjkMFHEe27UlBFAPwZ8HmobWIZdpYZNAGjNsAPH7JiyhpV8",
+    auth: "DnlNl1MSW0kDaYC3z9xeTA",
   },
 };
 
