@@ -1,30 +1,30 @@
-let push = require("web-push");
+const push = require("web-push");
 
-let vapidKeys = {
-  publicKey:
-    "BA4MxFbqv-Tx-bZ9M6s_mNt9LstHI_jFWgC-JMOEANJnujrmqhCBgDpp2fvZE2GeksT9uHdl3Qf08ppYSqkxBMc",
+// VAPID keys for authentication
+const vapidKeys = {
+  publicKey: "BA4MxFbqv-Tx-bZ9M6s_mNt9LstHI_jFWgC-JMOEANJnujrmqhCBgDpp2fvZE2GeksT9uHdl3Qf08ppYSqkxBMc",
   privateKey: "gCAJHsCVR3NMibfZLfRGtws2hw9b6TB_T1ZHUS5dz_Y",
 };
 
+// Set VAPID details
 push.setVapidDetails(
-  "mailto:example@yourdomain.org",
+  "mailto:example@yourdomain.org", // Change this to your email
   vapidKeys.publicKey,
   vapidKeys.privateKey
 );
 
-let sub = {
-  endpoint:
-    "https://fcm.googleapis.com/fcm/send/f5Gd93rYn1U:APA91bGYbTHE2g_YKA4_TotG9yqbvEV1p49JfJllmvwjlmUT8nINa1DfFcsZg77rFdnS8fhCgj6i-VdD_nE3Pz2TS0LAfTLqIPK1nlQ496yywpfpk_uglX0nSsiCZzot2xv91YFYuwfJ",
+// Your push subscription details
+const sub = {
+  endpoint: "https://fcm.googleapis.com/fcm/send/f5Gd93rYn1U:APA91bGYbTHE2g_YKA4_TotG9yqbvEV1p49JfJllmvwjlmUT8nINa1DfFcsZg77rFdnS8fhCgj6i-VdD_nE3Pz2TS0LAfTLqIPK1nlQ496yywpfpk_uglX0nSsiCZzot2xv91YFYuwfJ",
   expirationTime: null,
   keys: {
-    p256dh:
-      "BB7mtPYgDKiAxyBfbG1web3RXwz-y61LaoQ7rCIlZjkMFHEe27UlBFAPwZ8HmobWIZdpYZNAGjNsAPH7JiyhpV8",
+    p256dh: "BB7mtPYgDKiAxyBfbG1web3RXwz-y61LaoQ7rCIlZjkMFHEe27UlBFAPwZ8HmobWIZdpYZNAGjNsAPH7JiyhpV8",
     auth: "DnlNl1MSW0kDaYC3z9xeTA",
   },
 };
 
 // Prepare a JSON payload
-const payload = JSON.stringify({ message: "test message" });
+const payload = JSON.stringify({ message: "This is a test notification!" });
 
 push
   .sendNotification(sub, payload)
