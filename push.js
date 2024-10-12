@@ -2,7 +2,8 @@ const push = require("web-push");
 
 // VAPID keys for authentication
 const vapidKeys = {
-  publicKey: "BA4MxFbqv-Tx-bZ9M6s_mNt9LstHI_jFWgC-JMOEANJnujrmqhCBgDpp2fvZE2GeksT9uHdl3Qf08ppYSqkxBMc",
+  publicKey:
+    "BA4MxFbqv-Tx-bZ9M6s_mNt9LstHI_jFWgC-JMOEANJnujrmqhCBgDpp2fvZE2GeksT9uHdl3Qf08ppYSqkxBMc",
   privateKey: "gCAJHsCVR3NMibfZLfRGtws2hw9b6TB_T1ZHUS5dz_Y",
 };
 
@@ -15,11 +16,13 @@ push.setVapidDetails(
 
 // Your push subscription details
 const sub = {
-  endpoint: "https://fcm.googleapis.com/fcm/send/f5Gd93rYn1U:APA91bGYbTHE2g_YKA4_TotG9yqbvEV1p49JfJllmvwjlmUT8nINa1DfFcsZg77rFdnS8fhCgj6i-VdD_nE3Pz2TS0LAfTLqIPK1nlQ496yywpfpk_uglX0nSsiCZzot2xv91YFYuwfJ",
+  endpoint:
+    "https://fcm.googleapis.com/fcm/send/fjgoMRmmCJE:APA91bEcTntW5Vnj529XmmqJ8pTESPtf2DCq-8iyaj0LQXrPD_b1dWoCUxYEV3BrojRHMcpRb3rUQaOZBJkhhOBwOWMkbz-6beiM5Ge1qWJl-ss21KM5-MceHqzWdK2qVH_VeRvlPNnU",
   expirationTime: null,
   keys: {
-    p256dh: "BB7mtPYgDKiAxyBfbG1web3RXwz-y61LaoQ7rCIlZjkMFHEe27UlBFAPwZ8HmobWIZdpYZNAGjNsAPH7JiyhpV8",
-    auth: "DnlNl1MSW0kDaYC3z9xeTA",
+    p256dh:
+      "BMw-4eut15iiuY-31ANbQyx-SULkz1lOneI3oE2KVZptrtXxxlvF0cdgOj9P8HWBlEKYDPmOj3lcudxp2z_ddL8",
+    auth: "loIPm6lFw5cC367X5OEgEQ",
   },
 };
 
