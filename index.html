@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-  </head>
-  <body>
+    <title>Push Notifications</title>
+</head>
+<body>
     <button onclick="subscribe()">Subscribe</button>
 
     <script>
-      async function subscribe() {
-        let sw = await navigator.serviceWorker.ready;
-        let push = await sw.pushManager.subscribe({
-          userVisibleOnly: true,
-          applicationServerKey:
-            'BA4MxFbqv-Tx-bZ9M6s_mNt9LstHI_jFWgC-JMOEANJnujrmqhCBgDpp2fvZE2GeksT9uHdl3Qf08ppYSqkxBMc'
-        });
-        console.log(JSON.stringify(push));
-      }
+        async function subscribe() {
+            try {
+                let sw = await navigator.serviceWorker.ready;
+                let push = await sw.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: 'BA4MxFbqv-Tx-bZ9M6s_mNt9LstHI_jFWgC-JMOEANJnujrmqhCBgDpp2fvZE2GeksT9uHdl3Qf08ppYSqkxBMc'
+                });
+                console.log('Push subscription:', JSON.stringify(push));
+                // Optionally send the subscription to your server to save it
+            } catch (error) {
+                console.error('Error subscribing:', error);
+            }
+        }
 
-      if ('serviceWorker' in navigator) {
-        addEventListener('load', async () => {
-          let sw = await navigator.serviceWorker.register('./sw.js');
-          console.log(sw);
-        });
-      }
+        if ('serviceWorker' in navigator) {
+            addEventListener('load', async () => {
+                try {
+                    let sw = await navigator.serviceWorker.register('./sw.js');
+                    console.log('Service Worker registered:', sw);
+                } catch (error) {
+                    console.error('Service Worker registration failed:', error);
+                }
+            });
+        }
     </script>
-  </body>
+</body>
 </html>
