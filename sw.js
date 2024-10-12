@@ -37,13 +37,22 @@ self.addEventListener('push', (event) => {
 self.addEventListener('notificationclick', (event) => {
     console.log('Notification click received:', event.notification);
 
-    event.notification.close(); // Close the notification when clicked
+    event.notification.close(); 
 
-    // Handle the click and redirect to YouTube or any URL set in options.data
     event.waitUntil(
-        clients.openWindow(event.notification.data.url)
+        clients.matchAll({ type: 'window', includeUncontrolled: true }).then((clientList) => {
+            for (const client of clientList) {
+                if (client.url === event.notification.data.url && 'focus' in client) {
+                    return client.focus();
+                }
+            }
+            if (clients.openWindow) {
+                return clients.openWindow(event.notification.data.url);
+            }
+        })
     );
 });
+
 
 self.addEventListener('activate', (event) => {
     console.log('Service Worker activated');
